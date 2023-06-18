@@ -34,8 +34,8 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         os.remove(temp_file_path)
 
         # Return a success response
-        return func.HttpResponse("JSON data saved successfully to S3.", status_code=200)
+        return func.HttpResponse(status_code=200)
     except Exception as e:
         # Handle any exceptions and return an error response
         logging.error(str(e))
-        return func.HttpResponse("An error occurred while processing the request.", status_code=500)
+        return func.HttpResponse(status_code=500)
